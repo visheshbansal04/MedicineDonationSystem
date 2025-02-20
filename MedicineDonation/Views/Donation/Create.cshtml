@@ -1,0 +1,59 @@
+﻿@model MedicineDonation.Models.Donation
+
+@{
+    ViewBag.Title = "Donate Medicine";
+}
+<h6 style="color:forestgreen;">Intake Form</h6>
+<h2>Help us serve you better!</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg p-4 rounded">
+                <h2 class="text-center mb-4">Donate Medicine</h2>
+
+                @using (Html.BeginForm("Create", "Donation", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
+                {
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.MedicineName, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(model => model.MedicineName, new { @class = "form-control", placeholder = "Enter Medicine Name" })
+                        @Html.ValidationMessageFor(model => model.MedicineName, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.Quantity, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(model => model.Quantity, new { @class = "form-control", type = "number", min = "1", placeholder = "Enter Quantity" })
+                        @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.ExpiryDate, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(model => model.ExpiryDate, new { @class = "form-control", type = "date" })
+                        @Html.ValidationMessageFor(model => model.ExpiryDate, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.Condition, new { @class = "form-label fw-bold" })
+                        @Html.DropDownListFor(model => model.Condition, new SelectList(new[] { "Unused", "Unopened", "Partially Used" }), "Select Condition", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Condition, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.DonationDate, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(model => model.DonationDate, new { @class = "form-control", type = "date" })
+                        @Html.ValidationMessageFor(model => model.DonationDate, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.SelectedNGO, new { @class = "form-label fw-bold" })
+                        @Html.DropDownListFor(model => model.SelectedNGO, ViewBag.NGOList as SelectList, "Select NGO", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.SelectedNGO, "", new { @class = "text-danger" })
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Donate Medicine</button>
+                }
+
+                <p class="text-center mt-3"><a href="@Url.Action("PastDonations", "Donation")" class="text-decoration-none">View Past Donations</a></p>
+            </div>
+        </div>
+    </div>
+</div>

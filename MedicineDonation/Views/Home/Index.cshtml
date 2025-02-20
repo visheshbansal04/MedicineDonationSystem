@@ -1,0 +1,128 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="hero-section">
+        <div class="overlay">
+            <h1>Donate Medicine Today</h1>
+            <h3>Help Those in Need</h3>
+            <a href="#services" class="btn-view-services">View Services</a>
+        </div>
+    </div>
+    @* about section *@
+<div class="container-fluid p-5" id="about">
+    <div class="container">
+        <h6 style="color:forestgreen;">Empowering health</h6>
+        <h2>Donate medicines, save lives.</h2>
+        <br />
+        <div class="about-content">
+            <p>
+                Online Medicine Donation is a transformative platform that bridges
+                the gap between generous donors and NGOs dedicated to distributing
+                unused medicines to those in dire need. By registering and donating
+                your surplus medicines with accurate details, you contribute to a
+                system that ensures transparency and efficiency in healthcare support.
+                Our dedicated NGOs manage distribution and appointment scheduling while
+                our oversight maintains integrity and prevents misuse. Together, we strive
+                to provide accessible healthcare solutions to underprivileged individuals
+                while minimizing medicine wastage.
+            </p>
+            <div class="about-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSalFUJsrTP5Mlo56XRmLWCYwmYLj3C0wX6yQ&s" alt="Medicine Donation">
+            </div>
+        </div>
+    </div>
+</div>
+
+@* services *@
+    <div id="services">
+    <div class="common-section">
+        <h6 style="color:forestgreen;">Empower health</h6>
+        <h2>Donate medicines, change lives.</h2>
+        <div class="services-cards">
+
+            <div class="service-card">
+                <img class="service-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSalFUJsrTP5Mlo56XRmLWCYwmYLj3C0wX6yQ&s" />
+                <h3 class="">Medicine Donation</h3>
+                <p class="service-description">
+                    Donate your unused medicines to help those in need.
+                </p>
+            </div>
+            <div class="service-card">
+                <img class="service-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSalFUJsrTP5Mlo56XRmLWCYwmYLj3C0wX6yQ&s" />
+                <h3 class="">NGO Collaboration</h3>
+                <p class="service-description">
+                    Partner with NGOs for effective medicine distribution.
+                </p>
+            </div>
+
+
+            <div class="service-card">
+                <img class="service-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSalFUJsrTP5Mlo56XRmLWCYwmYLj3C0wX6yQ&s" />
+                <h3 class="">Transparency in Donations</h3>
+                <p class="service-description">
+                    Track your donations with ease and confidence.
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div>
+    <a href="/Member/DonateMedicine">Donate Now</a>
+    <a href="">Become an NGO</a>
+    </div>
+
+    @* contact *@
+
+
+<div class="container-fluid p-5" id="contact">
+    <div class="commons-section">
+        <h6 style="color:forestgreen;">Get in touch</h6>
+        <h2>We're here to assist you!</h2>
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="contact-form-card">
+                @* <h3>Send Us a Message</h3> *@
+
+                <label for="name">Name</label><br />
+                <input type="text" id="name" class="form-input" placeholder="Enter your name" required><br />
+
+                <label for="email">Email</label><br />
+                <input type="email" id="email" class="form-input" placeholder="Enter your email" required><br />
+
+                <label for="name">Phone number</label><br />
+                <input type="text" id="name" class="form-input" placeholder="Enter your Phone number" required><br />
+
+                <label for="message">Message</label><br />
+                <textarea id="message" class="form-textarea" placeholder="Write your message" required></textarea><br />
+
+                <input type="submit" value="Submit" class="form-submit">
+
+            </div>
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <strong>Email</strong><br />
+                    <a href="mailto:abc@gmail.com">abc@gmail.com</a>
+                </p>
+
+                <p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <strong>Location</strong><br />
+                    <a href="https://www.google.com/maps/place/+Patna+BR+IN">Patna, BR IN</a>
+                </p>
+            </div>
+        </div>
+        <br />
+        <div class="img-map">
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/map.jpg" AlternateText="Home Image" />
+        </div>
+    </div>
+    </div>
+
+    
+    
+

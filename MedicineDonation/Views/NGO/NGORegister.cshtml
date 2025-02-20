@@ -1,0 +1,82 @@
+﻿@model MedicineDonation.Models.NGO
+
+@{
+    ViewBag.Title = "NGO Registration";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg p-4 rounded">
+                <h2 class="text-center mb-4">NGO Registration</h2>
+
+                @using (Html.BeginForm("NGORegister", "NGO", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
+                {
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.NGOName, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(model => model.NGOName, new { @class = "form-control", placeholder = "Enter NGO Name" })
+                        @Html.ValidationMessageFor(model => model.NGOName, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.ManagerName, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(model => model.ManagerName, new { @class = "form-control", placeholder = "Enter Manager Name" })
+                        @Html.ValidationMessageFor(model => model.ManagerName, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.DateOfEstablishment, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(model => model.DateOfEstablishment, new { @class = "form-control", type = "date" })
+                        @Html.ValidationMessageFor(model => model.DateOfEstablishment, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.ContactNumber, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control", placeholder = "Enter Contact Number" })
+                        @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.Email, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Enter Email ID" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.NGOState, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(model => model.NGOState, new { @class = "form-control", placeholder = "Enter State" })
+                        @Html.ValidationMessageFor(model => model.NGOState, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.NGOCity, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(model => model.NGOCity, new { @class = "form-control", placeholder = "Enter City" })
+                        @Html.ValidationMessageFor(model => model.NGOCity, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.Pincode, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(model => model.Pincode, new { @class = "form-control", placeholder = "Enter Pincode" })
+                        @Html.ValidationMessageFor(model => model.Pincode, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.FullAddress, new { @class = "form-label fw-bold" })
+                        @Html.TextAreaFor(model => model.FullAddress, new { @class = "form-control", placeholder = "Enter Full Address", rows = 3 })
+                        @Html.ValidationMessageFor(model => model.FullAddress, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.LabelFor(model => model.NGOLicenseNumber, new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(model => model.NGOLicenseNumber, new { @class = "form-control", placeholder = "Enter NGO License Number" })
+                        @Html.ValidationMessageFor(model => model.NGOLicenseNumber, "", new { @class = "text-danger" })
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Register NGO</button>
+                }
+
+                <p class="text-center mt-3">Already registered? <a href="@Url.Action("NGOLogin", "NGO")" class="text-decoration-none">Login here</a></p>
+            </div>
+        </div>
+    </div>
+</div>

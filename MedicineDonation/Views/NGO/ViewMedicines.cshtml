@@ -1,0 +1,27 @@
+﻿@* @model List<MedicineDonation.Models.Medicine> *@
+
+@* <h2>Medicine List</h2> *@
+
+@* <table border="1"> *@
+@*     <thead> *@
+@*         <tr> *@
+@*             <th>ID</th> *@
+@*             <th>Name</th> *@
+@*             <th>Expiry Date</th> *@
+@*             <th>Donor</th> *@
+@*             <th>Status</th> *@
+@*         </tr> *@
+@*     </thead> *@
+@*     <tbody> *@
+@*         @foreach (var medicine in Model) *@
+@*         { *@
+@*             <tr> *@
+@*                 <td>@medicine.Id</td> *@
+@*                 <td>@medicine.Name</td> *@
+@*                 <td>@medicine.ExpiryDate.ToShortDateString()</td> *@
+@*                 <td>@medicine.DonorName</td> *@
+@*                 <td>@medicine.Status</td> *@
+@*             </tr> *@
+@*         } *@
+@*     </tbody> *@
+@* </table> *@

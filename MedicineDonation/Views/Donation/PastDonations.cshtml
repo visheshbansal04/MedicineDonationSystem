@@ -1,0 +1,35 @@
+﻿@model List<MedicineDonation.Models.Donation>
+
+@{
+    ViewBag.Title = "Past Donations";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Your Past Donations</h2>
+
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Medicine Name</th>
+                <th>Quantity</th>
+                <th>Expiry Date</th>
+                <th>Condition</th>
+                <th>Donation Date</th>
+                <th>NGO</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var donation in Model)
+            {
+                <tr>
+                    <td>@donation.MedicineName</td>
+                    <td>@donation.Quantity</td>
+                    <td>@donation.ExpiryDate.ToShortDateString()</td>
+                    <td>@donation.Condition</td>
+                    <td>@donation.DonationDate.ToShortDateString()</td>
+                    <td>@donation.SelectedNGO</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
